@@ -28,7 +28,11 @@ public class Main {
                 cat.scored();
                 scoreText.setText("Score: " + cat.getScore());
             }
-
+            if(cat.hitbox.collides(battery.hitbox))
+            {
+                System.out.println("here");
+                battery.captured();
+            }
 
             // inputs 
             if(arena.letterPressed('d'))

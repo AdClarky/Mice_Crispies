@@ -172,7 +172,6 @@ public class Cat {
 
     public void update()
     {
-        System.out.println(y_accel);
         if(y_accel > -0.2 && y > 919)
         {
             y_accel = 0;

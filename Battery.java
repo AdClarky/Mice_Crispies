@@ -25,12 +25,19 @@ public class Battery {
         int new_y = rand.nextInt(440);
         if(x < 500)
         {
-            x = new_x + 500;
+            new_x += 500;
         }
         if(y < 500)
         {
-            y = new_y + 500;
+            new_y += 500;
         }
+
+        for (Rectangle rectangle : rectangles) {
+            rectangle.setXPosition((rectangle.getXPosition()-x) + new_x);
+            rectangle.setYPosition((rectangle.getYPosition()-y) + new_y);
+        }
+        x = new_x;
+        y = new_y;
     }
 
     public void addTo(GameArena gameArena)
