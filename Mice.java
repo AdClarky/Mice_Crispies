@@ -18,7 +18,7 @@ public class Mice {
             do{
                 x = rand.nextInt(940);
                 y = rand.nextInt(940);
-            }while(isLocationUsed(x, y, 50) != null);
+            }while(isLocationUsed(x, y, 50) != 0);
             mice[i] = new Mouse(x, y);
             mice[i].addTo(gameArena);
         }
@@ -26,34 +26,35 @@ public class Mice {
 
     public boolean checkCollision(double x, double y, int size)
     {
-        Mouse mouse = isLocationUsed(x, y, size);
-        if(mouse != null)
+        int mouseInd = isLocationUsed(x, y, size);
+        if(mice[mouseInd] != null)
         {
-            System.out.println("mouse deleted:" + mouse.getXPosition() + "," + mouse.getYPosition());
-            mouse.move(1000, 1000);
+            System.out.println("mouse deleted:" + mice[mouseInd].getXPosition() + "," + mice[mouseInd].getYPosition());
+            mice[mouseInd].move(1000, 1000);
+            mice[mouseInd] = null;
             return true;
         }
         return false;
     }
 
-    private Mouse isLocationUsed(double x, double y, int size)
+    private int isLocationUsed(double x, double y, int size)
     {
-        for (Mouse mouse : mice) {
-            if(mouse != null &&
+        for (int i = 0; i < mice.length; i++) {
+            if(mice[i] != null &&
             (
                 // check top left of mouse
-                (mouse.getXPosition() > x && mouse.getYPosition() > y && mouse.getXPosition() < (x+size) && mouse.getYPosition() < (y+size)) ||
+                (mice[i].getXPosition() > x && mice[i].getYPosition() > y && mice[i].getXPosition() < (x+size) && mice[i].getYPosition() < (y+size)) ||
                 // check top right of mouse
-                (mouse.getXPosition()+50 < (x+size) && mouse.getYPosition() > y && mouse.getXPosition()+50 > x && mouse.getYPosition() < (y+size)) ||
+                (mice[i].getXPosition()+50 < (x+size) && mice[i].getYPosition() > y && mice[i].getXPosition()+50 > x && mice[i].getYPosition() < (y+size)) ||
                 // check bottom left of mouse
-                (mouse.getXPosition() > x && mouse.getYPosition()+50 < (y+size) && mouse.getXPosition() < (x+size) && mouse.getYPosition()+50 > y) ||
+                (mice[i].getXPosition() > x && mice[i].getYPosition()+50 < (y+size) && mice[i].getXPosition() < (x+size) && mice[i].getYPosition()+50 > y) ||
                 //check bottom right of mouse
-                (mouse.getXPosition()+50 < (x+size) && mouse.getYPosition()+50 < (y+size) && mouse.getXPosition()+50 > x && mouse.getYPosition()+50 > y)
+                (mice[i].getXPosition()+50 < (x+size) && mice[i].getYPosition()+50 < (y+size) && mice[i].getXPosition()+50 > x && mice[i].getYPosition()+50 > y)
             ))
             {
-                return mouse;
+                return i;
             }
         }
-        return null;
+        return 0;
     }
 }
