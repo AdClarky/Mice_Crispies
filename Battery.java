@@ -4,15 +4,19 @@ public class Battery {
     private double x = 0;
     private double y = 0;
     private Random rand = new Random();
-    private Rectangle[] rectangles = new Rectangle[2];
+    private Rectangle[] rectangles = new Rectangle[3];
+    public Rectangle hitbox;
 
     public Battery()
     {
         x = rand.nextInt(940);
         y = rand.nextInt(940);
 
-        rectangles[0] = new Rectangle(x, y, 20, 20, "ORANGE");
-        rectangles[1] = new Rectangle(x, y+20, 20, 30, "BLACK");
+        rectangles[0] = new Rectangle(x, y, 20, 50, "WHITE", 0);
+        hitbox =  rectangles[0];
+
+        rectangles[1] = new Rectangle(x, y, 20, 20, "ORANGE", 9);
+        rectangles[2] = new Rectangle(x, y+20, 20, 30, "BLACK", 9);
     }
 
     public void captured()

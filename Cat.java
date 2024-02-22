@@ -5,47 +5,53 @@ public class Cat {
     private double x_accel = 0;
     private double juice = 100;
     private int score = 0;
-    private Rectangle[] rectangles = new Rectangle[16];
+    private Rectangle[] rectangles = new Rectangle[17];
     private Rectangle[] flames = new Rectangle[12];
+    public Rectangle hitbox;
 
     public Cat(int starting_x, int starting_y)
     {
         x = starting_x;
         y = starting_y;
 
-        rectangles[0] = new Rectangle(x+10, y+20, 60, 50, "WHITE");
-        rectangles[1] = new Rectangle(x, y+10, 10, 50, "BLACK");
-        rectangles[2] = new Rectangle(x+10, y, 10, 10, "BLACK");
-        rectangles[3] = new Rectangle(x+10, y+10, 10, 20, "PINK");
-        rectangles[4] = new Rectangle(x+10, y+60, 10, 10, "BLACK");
-        rectangles[5] = new Rectangle(x+20, y+10, 10, 10, "BLACK");
-        rectangles[6] = new Rectangle(x+20, y+40, 10, 10, "BLACK");
-        rectangles[7] = new Rectangle(x+20, y+70, 40, 10, "BLACK");
-        rectangles[8] = new Rectangle(x+30, y+20, 20, 10, "BLACK");
-        rectangles[9] = new Rectangle(x+30, y+50, 20, 10, "PINK");
-        rectangles[10] = new Rectangle(x+50, y+10, 10, 10, "BLACK");
-        rectangles[11] = new Rectangle(x+50, y+40, 10, 10, "BLACK");
-        rectangles[12] = new Rectangle(x+60, y, 10, 10, "BLACK");
-        rectangles[13] = new Rectangle(x+60, y+60, 10, 10, "BLACK");
-        rectangles[14] = new Rectangle(x+60, y+10, 10, 20, "PINK");
-        rectangles[15] = new Rectangle(x+70, y+10, 10, 50, "BLACK");
+        rectangles[0] = new Rectangle(x, y, 80, 80, "WHITE", 0); // hitbox
+        hitbox =  rectangles[0];
 
-        flames[0] = new Rectangle(x+30, y+80, 20, 10, "WHITE");
-        flames[1] = new Rectangle(x+20, y+80, 10, 10, "YELLOW");
-        flames[2] = new Rectangle(x+50, y+80, 10, 10, "YELLOW");
-        flames[3] = new Rectangle(x+30, y+90, 20, 10, "YELLOW");
-        flames[4] = new Rectangle(x+20, y+90, 10, 20, "ORANGE");
-        flames[5] = new Rectangle(x+30, y+100, 20, 10, "ORANGE");
-        flames[6] = new Rectangle(x+50, y+90, 10, 10, "ORANGE");
-        flames[7] = new Rectangle(x+20, y+100, 10, 20, "RED");
-        flames[8] = new Rectangle(x+30, y+110, 30, 10, "RED");
-        flames[9] = new Rectangle(x+50, y+100, 10, 20, "RED");
-        flames[10] = new Rectangle(x+10, y+70, 10, 30, "RED");
-        flames[11] = new Rectangle(x+60, y+70, 10, 40, "RED");
+        rectangles[1] = new Rectangle(x+10, y+20, 60, 50, "WHITE", 10);
+        rectangles[2] = new Rectangle(x, y+10, 10, 50, "BLACK", 10);
+        rectangles[3] = new Rectangle(x+10, y, 10, 10, "BLACK", 10);
+        rectangles[4] = new Rectangle(x+10, y+10, 10, 20, "PINK", 10);
+        rectangles[5] = new Rectangle(x+10, y+60, 10, 10, "BLACK", 10);
+        rectangles[6] = new Rectangle(x+20, y+10, 10, 10, "BLACK", 10);
+        rectangles[7] = new Rectangle(x+20, y+40, 10, 10, "BLACK", 10);
+        rectangles[8] = new Rectangle(x+20, y+70, 40, 10, "BLACK", 10);
+        rectangles[9] = new Rectangle(x+30, y+20, 20, 10, "BLACK", 10);
+        rectangles[10] = new Rectangle(x+30, y+50, 20, 10, "PINK", 10);
+        rectangles[11] = new Rectangle(x+50, y+10, 10, 10, "BLACK", 10);
+        rectangles[12] = new Rectangle(x+50, y+40, 10, 10, "BLACK", 10);
+        rectangles[13] = new Rectangle(x+60, y, 10, 10, "BLACK", 10);
+        rectangles[14] = new Rectangle(x+60, y+60, 10, 10, "BLACK", 10);
+        rectangles[15] = new Rectangle(x+60, y+10, 10, 20, "PINK", 10);
+        rectangles[16] = new Rectangle(x+70, y+10, 10, 50, "BLACK", 10);
+
+
+        flames[0] = new Rectangle(x+30, y+80, 20, 10, "WHITE", 10);
+        flames[1] = new Rectangle(x+20, y+80, 10, 10, "YELLOW", 10);
+        flames[2] = new Rectangle(x+50, y+80, 10, 10, "YELLOW", 10);
+        flames[3] = new Rectangle(x+30, y+90, 20, 10, "YELLOW", 10);
+        flames[4] = new Rectangle(x+20, y+90, 10, 20, "ORANGE", 10);
+        flames[5] = new Rectangle(x+30, y+100, 20, 10, "ORANGE", 10);
+        flames[6] = new Rectangle(x+50, y+90, 10, 10, "ORANGE", 10);
+        flames[7] = new Rectangle(x+20, y+100, 10, 20, "RED", 10);
+        flames[8] = new Rectangle(x+30, y+110, 30, 10, "RED", 10);
+        flames[9] = new Rectangle(x+50, y+100, 10, 20, "RED", 10);
+        flames[10] = new Rectangle(x+10, y+70, 10, 30, "RED", 10);
+        flames[11] = new Rectangle(x+60, y+70, 10, 40, "RED", 10);
     }
 
 
     public void addTo(GameArena gameArena){
+        gameArena.addRectangle(hitbox);
         for (Rectangle rectangle : rectangles) {
             gameArena.addRectangle(rectangle);
         }
