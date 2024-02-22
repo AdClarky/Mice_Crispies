@@ -4,10 +4,6 @@ public class Main {
         Rectangle background = new Rectangle(0, 0, 1000, 1000, "WHITE");
         arena.addRectangle(background);
 
-        int score = 0;
-        Text scoreText = new Text("Score: " + score, 22, 0, 22, "BLACK");        
-        arena.addText(scoreText);
-
         Mice mice = new Mice(arena, 15);
 
         Cat cat = new Cat(0, 0);
@@ -16,6 +12,9 @@ public class Main {
         Rectangle juiceBar = new Rectangle(900, 0, 100, 20, "RED");
         arena.addRectangle(juiceBar); 
 
+        Text scoreText = new Text("Score: " + cat.getScore(), 22, 0, 22, "BLACK");        
+        arena.addText(scoreText);
+
         while(true)
         {
             arena.pause();
@@ -23,8 +22,8 @@ public class Main {
             juiceBar.setXPosition(1000 - cat.getJuice());
             if(mice.checkCollision(cat.getXPosition(), cat.getYPosition(), 80))
             {
-                score++;
-                scoreText.setText("Score: " + score);
+                cat.scored();
+                scoreText.setText("Score: " + cat.getScore());
             }
             if(arena.letterPressed('d'))
             {

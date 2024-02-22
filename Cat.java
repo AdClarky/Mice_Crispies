@@ -4,6 +4,7 @@ public class Cat {
     private double y_accel = 0.2;
     private double x_accel = 0;
     private double juice = 100;
+    private int score = 0;
     Rectangle[] rectangles = new Rectangle[16];
     Rectangle[] flames = new Rectangle[12];
 
@@ -123,6 +124,16 @@ public class Cat {
     public double getJuice()
     {
         return juice;
+    }
+
+    public void scored()
+    {
+        score++;
+    }
+
+    public int getScore()
+    {
+        return score;
     }
 
     public void move()
