@@ -1,7 +1,6 @@
 import java.util.Random;
 
 public class Mice {
-    private int[][] actualLocations = new int[15][2];
     private Mouse[] mice;
     private Random rand = new Random();
 
@@ -20,7 +19,6 @@ public class Mice {
                 x = rand.nextInt(940);
                 y = rand.nextInt(940);
             }while(isLocationUsed(x, y, 0) != null);
-            actualLocations[i] = new int[]{x, y};
             mice[i] = new Mouse(x, y);
             mice[i].addTo(gameArena);
         }
