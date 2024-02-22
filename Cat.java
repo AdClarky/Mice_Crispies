@@ -5,8 +5,8 @@ public class Cat {
     private double x_accel = 0;
     private double juice = 100;
     private int score = 0;
-    Rectangle[] rectangles = new Rectangle[16];
-    Rectangle[] flames = new Rectangle[12];
+    private Rectangle[] rectangles = new Rectangle[16];
+    private Rectangle[] flames = new Rectangle[12];
 
     public Cat(int starting_x, int starting_y)
     {

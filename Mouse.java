@@ -1,7 +1,7 @@
 public class Mouse {
     private double x = 0;
     private double y = 0;
-    Rectangle[] rectangles = new Rectangle[5];
+    private Rectangle[] rectangles = new Rectangle[5];
 
     public Mouse(int starting_x, int starting_y)
     {

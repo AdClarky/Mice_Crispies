@@ -6,6 +6,9 @@ public class Main {
 
         Mice mice = new Mice(arena, 15);
 
+        Battery battery = new Battery();
+        battery.addTo(arena);
+
         Cat cat = new Cat(0, 0);
         cat.addTo(arena);
         
@@ -25,6 +28,9 @@ public class Main {
                 cat.scored();
                 scoreText.setText("Score: " + cat.getScore());
             }
+
+
+            // inputs 
             if(arena.letterPressed('d'))
             {
                 cat.horizontalInput(1);
