@@ -1,6 +1,8 @@
+package engine;
+
 /**
  * Models a simple line. 
- * This class represents a Line object. When combined with the GameArena class,
+ * This class represents a Line object. When combined with the engine.GameArena class,
  * instances of the Line class can be displayed on the screen.
  */
 public class Line 
@@ -28,7 +30,7 @@ public class Line
 
 	/**
 	 * Obtains the start position of this line on the X axis.
-	 * @return the X coordinate of the start of this line within the GameArena.
+	 * @return the X coordinate of the start of this line within the engine.GameArena.
 	 */
 	public double getXStart()
 	{
@@ -37,7 +39,7 @@ public class Line
 
 	/**
 	 * Obtains the end position of this line on the X axis.
-	 * @return the X coordinate of the end of this line within the GameArena.
+	 * @return the X coordinate of the end of this line within the engine.GameArena.
 	 */
 	public double getXEnd()
 	{
@@ -47,7 +49,7 @@ public class Line
 
 	/**
 	 * Obtains the start position of this line on the Y axis.
-	 * @return the Y coordinate of the start of this line within the GameArena.
+	 * @return the Y coordinate of the start of this line within the engine.GameArena.
 	 */
 	public double getYStart()
 	{
@@ -56,7 +58,7 @@ public class Line
 
 	/**
 	 * Obtains the end position of this line on the Y axis.
-	 * @return the Y coordinate of the end of this line within the GameArena.
+	 * @return the Y coordinate of the end of this line within the engine.GameArena.
 	 */
 	public double getYEnd()
 	{

@@ -1,7 +1,10 @@
+import engine.GameArena;
+import engine.Rectangle;
+
 public class Mouse {
-    private double x = 0;
-    private double y = 0;
-    private Rectangle[] rectangles = new Rectangle[6];
+    private double x;
+    private double y;
+    private final Rectangle[] rectangles = new Rectangle[6];
     public Rectangle hitbox;
 
     public Mouse(int starting_x, int starting_y)

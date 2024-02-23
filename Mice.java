@@ -1,8 +1,9 @@
+import engine.GameArena;
+import engine.Rectangle;
 import java.util.Random;
 
 public class Mice {
-    private Mouse[] mice;
-    private Random rand = new Random();
+    private final Mouse[] mice;
 
     public Mice(GameArena gameArena, int numMice)
     {
@@ -15,6 +16,7 @@ public class Mice {
         mice = new Mouse[numMice];
         for(int i = 0; i < numMice; i++)
         {
+            Random rand = new Random();
             x = rand.nextInt(940);
             y = rand.nextInt(940);
             mice[i] = new Mouse(x, y);

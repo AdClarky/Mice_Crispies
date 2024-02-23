@@ -1,6 +1,7 @@
+package engine;
 /**
  * Models a simple solid sphere. 
- * This class represents a Ball object. When combined with the GameArena class,
+ * This class represents a Ball object. When combined with the engine.GameArena class,
  * instances of the Ball class can be displayed on the screen.
  */
 public class Ball 
@@ -56,7 +57,7 @@ public class Ball
 
 	/**
 	 * Obtains the current position of this Ball.
-	 * @return the X coordinate of this Ball within the GameArena.
+	 * @return the X coordinate of this Ball within the engine.GameArena.
 	 */
 	public double getXPosition()
 	{
@@ -65,7 +66,7 @@ public class Ball
 
 	/**
 	 * Obtains the current position of this Ball.
-	 * @return the Y coordinate of this Ball within the GameArena.
+	 * @return the Y coordinate of this Ball within the engine.GameArena.
 	 */
 	public double getYPosition()
 	{

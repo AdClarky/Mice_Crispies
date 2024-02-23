@@ -1,7 +1,9 @@
+package engine;
+
 /**
  * Models a simple piece of text. 
- * This class represents a Text object. When combined with the GameArena class,
- * instances of the Text class can be displayed on the screen to show display
+ * This class represents a engine.Text object. When combined with the engine.GameArena class,
+ * instances of the engine.Text class can be displayed on the screen to show display
  * an appropriate piece of text.
  */
 public class Text
@@ -25,7 +27,7 @@ public class Text
 
 	/**
 	 * Obtains the position of this text on the X axis.
-	 * @return the X coordinate of this text within the GameArena.
+	 * @return the X coordinate of this text within the engine.GameArena.
 	 */
 	public double getXPosition()
 	{
@@ -34,7 +36,7 @@ public class Text
 
 	/**
 	 * Obtains the position of this text on the Y axis.
-	 * @return the Y coordinate of this text within the GameArena.
+	 * @return the Y coordinate of this text within the engine.GameArena.
 	 */
 	public double getYPosition()
 	{
@@ -61,8 +63,8 @@ public class Text
 	}
 
 	/**
-	 * Obtains the colour of this Text.
-	 * @return a textual description of the colour of this Text.
+	 * Obtains the colour of this engine.Text.
+	 * @return a textual description of the colour of this engine.Text.
 	 */
 	public String getColour()
 	{
@@ -79,8 +81,8 @@ public class Text
 	}
 
 	/**
-	 * Obtains the layer of this Text.
-	 * @return the layer of this Text.
+	 * Obtains the layer of this engine.Text.
+	 * @return the layer of this engine.Text.
 	 */
 	public int getLayer()
 	{
@@ -147,8 +149,8 @@ public class Text
 	}
 
 	/**
-	 * Moves the current position of this Text to the given co-ordinates
-	 * @param x the new x co-ordinate of this Text
+	 * Moves the current position of this engine.Text to the given co-ordinates
+	 * @param x the new x co-ordinate of this engine.Text
 	 */
 	public void setXPosition(double x)
 	{
@@ -156,8 +158,8 @@ public class Text
 	}
 
 	/**
-	 * Moves the current position of this Text to the given co-ordinates
-	 * @param y the new y co-ordinate of this Text
+	 * Moves the current position of this engine.Text to the given co-ordinates
+	 * @param y the new y co-ordinate of this engine.Text
 	 */
 	public void setYPosition(double y)
 	{

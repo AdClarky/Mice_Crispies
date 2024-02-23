@@ -1,3 +1,7 @@
+import engine.GameArena;
+import engine.Rectangle;
+import engine.Text;
+
 public class Main {
     public static void main(String[] args) {
         GameArena arena = new GameArena(1000, 1000);
@@ -33,7 +37,11 @@ public class Main {
                 battery.captured();
                 cat.batteryCaptured();
             }
-
+            if(cat.getScore() == 5) // change later for
+            {
+                cat.died();
+                break;
+            }
             // inputs 
             if(arena.letterPressed('d'))
             {

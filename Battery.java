@@ -1,10 +1,13 @@
+import engine.GameArena;
+import engine.Rectangle;
+
 import java.util.Random;
 
 public class Battery {
-    private double x = 0;
-    private double y = 0;
-    private Random rand = new Random();
-    private Rectangle[] rectangles = new Rectangle[3];
+    private double x;
+    private double y;
+    private final Random rand = new Random();
+    private final Rectangle[] rectangles = new Rectangle[3];
     public Rectangle hitbox;
 
     public Battery()
