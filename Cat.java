@@ -132,6 +132,11 @@ public class Cat {
         return juice;
     }
 
+    public void batteryCaptured()
+    {
+        juice = 100;
+    }
+
     public void scored()
     {
         score++;

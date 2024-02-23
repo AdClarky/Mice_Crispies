@@ -23,15 +23,15 @@ public class Main {
             arena.pause();
             cat.update();
             juiceBar.setXPosition(1000 - cat.getJuice());
-            if(mice.checkCollision(cat.getXPosition(), cat.getYPosition(), 80))
+            if(mice.checkCollision(cat.hitbox))
             {
                 cat.scored();
                 scoreText.setText("Score: " + cat.getScore());
             }
             if(cat.hitbox.collides(battery.hitbox))
             {
-                System.out.println("here");
                 battery.captured();
+                cat.batteryCaptured();
             }
 
             // inputs 

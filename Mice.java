@@ -15,46 +15,23 @@ public class Mice {
         mice = new Mouse[numMice];
         for(int i = 0; i < numMice; i++)
         {
-            do{
-                x = rand.nextInt(940);
-                y = rand.nextInt(940);
-            }while(isLocationUsed(x, y, 50) != 0);
+            x = rand.nextInt(940);
+            y = rand.nextInt(940);
             mice[i] = new Mouse(x, y);
             mice[i].addTo(gameArena);
         }
     }
 
-    public boolean checkCollision(double x, double y, int size)
+    public boolean checkCollision(Rectangle hitbox)
     {
-        int mouseInd = isLocationUsed(x, y, size);
-        if(mice[mouseInd] != null)
-        {
-            System.out.println("mouse deleted:" + mice[mouseInd].getXPosition() + "," + mice[mouseInd].getYPosition());
-            mice[mouseInd].move(1000, 1000);
-            mice[mouseInd] = null;
-            return true;
-        }
-        return false;
-    }
-
-    private int isLocationUsed(double x, double y, int size)
-    {
-        for (int i = 0; i < mice.length; i++) {
-            if(mice[i] != null &&
-            (
-                // check top left of mouse
-                (mice[i].getXPosition() > x && mice[i].getYPosition() > y && mice[i].getXPosition() < (x+size) && mice[i].getYPosition() < (y+size)) ||
-                // check top right of mouse
-                (mice[i].getXPosition()+50 < (x+size) && mice[i].getYPosition() > y && mice[i].getXPosition()+50 > x && mice[i].getYPosition() < (y+size)) ||
-                // check bottom left of mouse
-                (mice[i].getXPosition() > x && mice[i].getYPosition()+50 < (y+size) && mice[i].getXPosition() < (x+size) && mice[i].getYPosition()+50 > y) ||
-                //check bottom right of mouse
-                (mice[i].getXPosition()+50 < (x+size) && mice[i].getYPosition()+50 < (y+size) && mice[i].getXPosition()+50 > x && mice[i].getYPosition()+50 > y)
-            ))
+        for (Mouse mouse : mice) {
+            if(mouse.hitbox.collides(hitbox))
             {
-                return i;
+                System.out.println("mouse deleted:" + mouse.getXPosition() + "," + mouse.getYPosition());
+                mouse.move(1000, 1000);
+                return true;
             }
         }
-        return 0;
+        return false;
     }
 }
