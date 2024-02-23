@@ -1,5 +1,3 @@
-package engine;
-
 /**
  * Models a simple, solid rectangle. 
  * This class represents a Rectabgle object. When combined with the engine.GameArena class,

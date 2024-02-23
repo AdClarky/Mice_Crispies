@@ -1,6 +1,3 @@
-import engine.GameArena;
-import engine.Rectangle;
-
 public class Cat {
     private double x;
     private double y;

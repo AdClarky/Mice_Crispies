@@ -1,7 +1,3 @@
-import engine.GameArena;
-import engine.Rectangle;
-import engine.Text;
-
 public class Main {
     public static void main(String[] args) {
         GameArena arena = new GameArena(1000, 1000);
@@ -9,6 +5,8 @@ public class Main {
         arena.addRectangle(background);
 
         Mice mice = new Mice(arena, 15);
+
+        Bullets bullets = new Bullets(arena, 3);
 
         Battery battery = new Battery();
         battery.addTo(arena);
@@ -26,6 +24,7 @@ public class Main {
         {
             arena.pause();
             cat.update();
+            bullets.updateBullets();
             juiceBar.setXPosition(1000 - cat.getJuice());
             if(mice.checkCollision(cat.hitbox))
             {
@@ -37,7 +36,7 @@ public class Main {
                 battery.captured();
                 cat.batteryCaptured();
             }
-            if(cat.getScore() == 5) // change later for
+            if(bullets.checkCollision(cat.hitbox)) // if hit by bullet
             {
                 cat.died();
                 break;

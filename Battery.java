@@ -1,6 +1,3 @@
-import engine.GameArena;
-import engine.Rectangle;
-
 import java.util.Random;
 
 public class Battery {

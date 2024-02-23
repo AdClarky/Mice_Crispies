@@ -1,6 +1,3 @@
-import engine.GameArena;
-import engine.Rectangle;
-
 public class Mouse {
     private double x;
     private double y;
@@ -22,6 +19,12 @@ public class Mouse {
         rectangles[5] = new Rectangle(x+30, y+20, 10, 10, "RED", 8);
     }
 
+    public void addTo(GameArena gameArena){
+        for (Rectangle rectangle : rectangles) {
+            gameArena.addRectangle(rectangle);
+        }
+    }
+
     public double getXPosition()
     {
         return x;
@@ -40,11 +43,5 @@ public class Mouse {
         }
         x = newX;
         y = newY;
-    }
-
-    public void addTo(GameArena gameArena){
-        for (Rectangle rectangle : rectangles) {
-            gameArena.addRectangle(rectangle);
-        }
     }
 }
