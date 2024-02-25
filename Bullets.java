@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class Bullets {
     private final Bullet[] bullets;
-    private static final double bullet_velocity = 0.5;
+    private static final double bullet_velocity = -1;
 
     public Bullets(GameArena gameArena, int numBullets)
     {
@@ -11,7 +11,8 @@ public class Bullets {
         for(int i = 0; i < numBullets; i++)
         {
             int y = rand.nextInt(950);
-            bullets[i] = new Bullet(1000, y);
+            int x = rand.nextInt(1000);
+            bullets[i] = new Bullet(x+1000, y);
             bullets[i].addTo(gameArena);
         }
     }

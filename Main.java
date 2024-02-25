@@ -1,12 +1,12 @@
 public class Main {
     public static void main(String[] args) {
         GameArena arena = new GameArena(1000, 1000);
-        Rectangle background = new Rectangle(0, 0, 1000, 1000, "WHITE");
+        Rectangle background = new Rectangle(0, 0, 1000, 1000, "WHITE", 1);
         arena.addRectangle(background);
 
         Mice mice = new Mice(arena, 15);
 
-        Bullets bullets = new Bullets(arena, 3);
+        Bullets bullets = new Bullets(arena, 15);
 
         Battery battery = new Battery();
         battery.addTo(arena);
@@ -14,10 +14,10 @@ public class Main {
         Cat cat = new Cat(0, 0);
         cat.addTo(arena);
         
-        Rectangle juiceBar = new Rectangle(900, 0, 100, 20, "RED");
+        Rectangle juiceBar = new Rectangle(900, 0, 100, 20, "RED", 1);
         arena.addRectangle(juiceBar); 
 
-        Text scoreText = new Text("Score: " + cat.getScore(), 22, 0, 22, "BLACK");        
+        Text scoreText = new Text("Score: " + cat.getScore(), 22, 0, 22, "BLACK", 1);        
         arena.addText(scoreText);
 
         while(true)
@@ -38,6 +38,7 @@ public class Main {
             }
             if(bullets.checkCollision(cat.hitbox)) // if hit by bullet
             {
+                System.out.println("cat died");
                 cat.died();
                 break;
             }
