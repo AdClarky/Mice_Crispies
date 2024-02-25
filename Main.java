@@ -1,8 +1,10 @@
 public class Main {
     public static void main(String[] args) {
         GameArena arena = new GameArena(1000, 1000);
-        Rectangle background = new Rectangle(0, 0, 1000, 1000, "WHITE", 1);
-        arena.addRectangle(background);
+        // Rectangle background = new Rectangle(0, 0, 1000, 1000, "WHITE", 1);
+        // arena.addRectangle(background);
+        Background background = new Background();
+        background.addTo(arena);
 
         Mice mice = new Mice(arena, 15);
 
