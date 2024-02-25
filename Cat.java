@@ -50,8 +50,8 @@ public class Cat {
         flames[10] = new Rectangle(x+10, y+70, 10, 30, "RED", 10);
         flames[11] = new Rectangle(x+60, y+70, 10, 40, "RED", 10);
 
-        tears[0] = new Rectangle(x+20, y+50, 10, 20, "BLUE", 10);
-        tears[1] = new Rectangle(x+50, y+50, 10, 20, "BLUE", 10);
+        tears[0] = new Rectangle(1000, 1000, 10, 20, "BLUE", 10);
+        tears[1] = new Rectangle(1000, 1000, 10, 20, "BLUE", 10);
     }
 
 

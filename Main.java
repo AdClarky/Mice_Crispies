@@ -38,12 +38,6 @@ public class Main {
                 battery.captured();
                 cat.batteryCaptured();
             }
-            if(bullets.checkCollision(cat.hitbox)) // if hit by bullet
-            {
-                System.out.println("cat died");
-                cat.died();
-                break;
-            }
             // inputs 
             if(arena.letterPressed('d'))
             {
@@ -58,6 +52,12 @@ public class Main {
                 cat.verticalInput();
             }else{
                 cat.flameOff();
+            }
+            if(bullets.checkCollision(cat.hitbox)) // if hit by bullet
+            {
+                System.out.println("cat died");
+                cat.died();
+                break;
             }
         }
 
