@@ -8,8 +8,8 @@ public class Menu {
     
     public Menu()
     {
-        menu.setBackgroundImage("cat.jpeg");
-        menu.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        menu.setBackgroundImage("catTitle.jpeg");
+        menu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         menu.addText(playText);
         menu.addText(levelsText);
         menu.addText(exitText);
@@ -20,24 +20,53 @@ public class Menu {
         menu.exit();
     }
 
+    private void playClicked()
+    {
+        Main.level1();
+    }
+
+    private void levelsClicked()
+    {
+        LevelsMenu levels = new LevelsMenu();
+        levels.runLevelMenu();
+    }
+
+    private void exitClicked()
+    {
+        menu.exit();
+    }
+
+
     public void runMenu()
     {
         while(true)
         {
-            System.out.println(menu.getMousePositionX());
             menu.pause();
             if(menu.getMousePositionX() > 5 && menu.getMousePositionX() < 137 && menu.getMousePositionY() > 650 && menu.getMousePositionY() < 700)
             {
+                if(menu.leftMousePressed())
+                {
+                    playClicked();
+                }
                 playText.setColour("RED");
                 levelsText.setColour("WHITE");
                 exitText.setColour("WHITE");
             }else if(menu.getMousePositionX() > 5 && menu.getMousePositionX() < 1957 && menu.getMousePositionY() > 700 && menu.getMousePositionY() < 750)
-            {
+            {                
+                if(menu.leftMousePressed())
+                {
+                    System.out.println(1);
+                    levelsClicked();
+                }
                 playText.setColour("WHITE");
                 levelsText.setColour("RED");
                 exitText.setColour("WHITE");
             }else if(menu.getMousePositionX() > 5 && menu.getMousePositionX() < 118 && menu.getMousePositionY() > 750 && menu.getMousePositionY() < 800)
             {
+                if(menu.leftMousePressed())
+                {
+                    exitClicked();
+                }
                 playText.setColour("WHITE");
                 levelsText.setColour("WHITE");
                 exitText.setColour("RED");
