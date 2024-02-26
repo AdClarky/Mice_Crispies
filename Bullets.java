@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class Bullets {
     private final Bullet[] bullets;
-    private static final double bullet_velocity = -1;
+    private double bullet_velocity = -1;
 
     public Bullets(GameArena gameArena, int numBullets)
     {
@@ -23,6 +23,11 @@ public class Bullets {
         {
             bullet.move(bullet_velocity, 0);
         }
+    }
+
+    public void increaseBulletSpeed(double dx)
+    {
+        bullet_velocity -= dx;
     }
 
     public boolean checkCollision(Rectangle hitbox)

@@ -31,6 +31,7 @@ public class Main {
             if(mice.checkCollision(cat.hitbox))
             {
                 cat.scored();
+                bullets.increaseBulletSpeed(0.2);
                 scoreText.setText("Score: " + cat.getScore());
             }
             if(cat.hitbox.collides(battery.hitbox))
