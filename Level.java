@@ -3,19 +3,21 @@ import javax.swing.JFrame;
 public class Level{
     private GameArena arena = new GameArena(1000, 1050);
     private Background background = new Background();
-    private Mice mice = new Mice(arena, 15);
+    private Mice mice;
     private Bullets bullets;
     private Battery battery = new Battery();
-    private Cat cat = new Cat(0, 0);
+    private Cat cat = new Cat(0, 900);
     private Rectangle juiceBar = new Rectangle(750, 0, 250, 25, "RED", 1);
     private Rectangle juiceBarBackground = new Rectangle(750, 0, 250, 25, "WHITE", 0);
     private Text scoreText = new Text("Score: " + cat.getScore(), 44, 0, 44, "WHITE", 1);        
 
-    public Level(String levelName, int numBullets, int bulletSize) {
+    public Level(String levelName, int numBullets, int bulletSize, double bulletStartingVelocity, int miceCount) {
         arena.setName(levelName);
         arena.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         background.addTo(arena);
+        mice = new Mice(arena, miceCount);
         bullets = new Bullets(arena, numBullets, bulletSize);
+        bullets.increaseBulletSpeed(bulletStartingVelocity+1);
         battery.addTo(arena);
         cat.addTo(arena);
         arena.addRectangle(juiceBar);
@@ -36,6 +38,10 @@ public class Level{
                 cat.scored();
                 bullets.increaseBulletSpeed(0.2);
                 scoreText.setText("Score: " + cat.getScore());
+                if(cat.getScore() == mice.getMouseCount())
+                {
+                    System.out.println("WON");
+                }
             }
             if(cat.hitbox.collides(battery.hitbox))
             {
@@ -64,6 +70,13 @@ public class Level{
                 break;
             }
         }
+    }
+
+    public void setMousePositions(int[][] positions)
+    {
+        if(positions.length != mice.getMouseCount())
+            return;
+        mice.setMousePositions(positions);
     }
 
     public void endGame()

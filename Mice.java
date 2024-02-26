@@ -2,11 +2,13 @@ import java.util.Random;
 
 public class Mice {
     private final Mouse[] mice;
+    private int numMice;
 
-    public Mice(GameArena gameArena, int numMice)
+    public Mice(GameArena gameArena, int num_mice)
     {
         int x;
         int y;
+        numMice = num_mice;
         if(numMice > 15)
         {
             numMice = 15;
@@ -19,6 +21,19 @@ public class Mice {
             y = rand.nextInt(940);
             mice[i] = new Mouse(x, y+50);
             mice[i].addTo(gameArena);
+        }
+    }
+
+    public int getMouseCount()
+    {
+        return numMice;
+    }
+
+    public void setMousePositions(int[][] positions)
+    {
+        for(int i = 0; i < numMice; i++)
+        {
+            mice[i].move(positions[i][0], positions[i][1]+50);
         }
     }
 
