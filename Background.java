@@ -33,7 +33,6 @@ public class Background {
                 count++;
             }
         }
-        System.out.println(count);;
     }
 
     public void addTo(GameArena gameArena)
