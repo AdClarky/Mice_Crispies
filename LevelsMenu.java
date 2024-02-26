@@ -44,31 +44,31 @@ public class LevelsMenu {
         switch(currentLevel)
         {
             case 1:
-                Main.level1();
+                LevelData.level1();
                 break;
             case 2:
-                Main.level2();
+                LevelData.level2();
                 break;
             case 3:
-                Main.level3();
+                LevelData.level3();
                 break;
             case 4:
-                Main.level4();
+                LevelData.level4();
                 break;
             case 5:
-                Main.level5();
+                LevelData.level5();
                 break;
             case 6:
-                Main.level6();
+                LevelData.level6();
                 break;
             case 7:
-                Main.level7();
+                LevelData.level7();
                 break;
             case 8:
-                Main.level8();
+                LevelData.level8();
                 break;
             case 9:
-                Main.level9();
+                LevelData.level9();
                 break;
         }
     }

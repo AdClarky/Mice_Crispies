@@ -28,47 +28,47 @@ public class Menu {
         switch(currentLevel)
         {
             case 1:
-                if(Main.level1())
+                if(LevelData.level1())
                     currentLevel++;
                     currentLevelText.setText(": LEVEL " + currentLevel);
                 break;
             case 2:
-                if(Main.level2())
+                if(LevelData.level2())
                     currentLevel++;
                     currentLevelText.setText(": LEVEL " + currentLevel);
                 break;
             case 3:
-                if(Main.level3())
+                if(LevelData.level3())
                     currentLevel++;
                     currentLevelText.setText(": LEVEL " + currentLevel);
                 break;
             case 4:
-                if(Main.level4())
+                if(LevelData.level4())
                     currentLevel++;
                     currentLevelText.setText(": LEVEL " + currentLevel);
                 break;
             case 5:
-                if(Main.level5())
+                if(LevelData.level5())
                     currentLevel++;
                     currentLevelText.setText(": LEVEL " + currentLevel);
                 break;
             case 6:
-                if(Main.level6())
+                if(LevelData.level6())
                     currentLevel++;
                     currentLevelText.setText(": LEVEL " + currentLevel);
                 break;
             case 7:
-                if(Main.level7())
+                if(LevelData.level7())
                     currentLevel++;
                     currentLevelText.setText(": LEVEL " + currentLevel);
                 break;
             case 8:
-                if(Main.level8())
+                if(LevelData.level8())
                     currentLevel++;
                     currentLevelText.setText(": LEVEL " + currentLevel);
                 break;
             case 9:
-                if(Main.level9())
+                if(LevelData.level9())
                     currentLevel++;
                     currentLevelText.setText(": LEVEL " + currentLevel);
                 break;
