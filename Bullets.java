@@ -32,7 +32,7 @@ public class Bullets {
         Random rand = new Random();
         int y = rand.nextInt(950);
         int x = rand.nextInt(1000);
-        bullet.setPos(x+1000, y);
+        bullet.setPos(x+1000, y+50);
     }
 
     public void increaseBulletSpeed(double dx)

@@ -14,7 +14,7 @@ public class Cat {
     public Cat(int starting_x, int starting_y)
     {
         x = starting_x;
-        y = starting_y;
+        y = starting_y + 50;
 
         rectangles[0] = new Rectangle(x, y, 80, 80, "BLUE", 0); // hitbox
         hitbox =  rectangles[0];
@@ -165,11 +165,11 @@ public class Cat {
 
     public void move()
     {
-        if((y+y_accel+80) > 1000 || (y+y_accel) < 0)
+        if((y+y_accel+80) > 1050 || (y+y_accel) < 50)
         {
             y_accel = (-y_accel)/3;
         }
-        if((x+x_accel+80) > 1000 || (x+x_accel) < 0)
+        if((x+x_accel+80) > 1050 || (x+x_accel) < 0)
         {
             x_accel = (-x_accel)/2;
         }
@@ -183,10 +183,12 @@ public class Cat {
 
     public void update()
     {
-        if(y_accel > -0.2 && y > 919)
+        if(y_accel > -0.2 && y > 969)
         {
             y_accel = 0;
-            x_accel += 0.2 * -(x_accel/Math.abs(x_accel));
+            System.out.println(x_accel);
+            x_accel += -(x_accel/Math.abs(x_accel));
+            System.out.println(x_accel);
         }else{
             y_accel += 0.4;
         }

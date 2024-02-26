@@ -17,7 +17,7 @@ public class Mice {
         {
             x = rand.nextInt(940);
             y = rand.nextInt(940);
-            mice[i] = new Mouse(x, y);
+            mice[i] = new Mouse(x, y+50);
             mice[i].addTo(gameArena);
         }
     }

@@ -29,7 +29,7 @@ public class Background {
                     nextColour = colour1;
                 }
 
-                rectangles[count] = new Rectangle(j*sizeOfRects, i*sizeOfRects, sizeOfRects, sizeOfRects, nextColour, 1);
+                rectangles[count] = new Rectangle(j*sizeOfRects, (i*sizeOfRects)+50, sizeOfRects, sizeOfRects, nextColour, 1);
                 count++;
             }
         }

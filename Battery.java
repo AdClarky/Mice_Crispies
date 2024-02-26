@@ -22,7 +22,7 @@ public class Battery {
     public void captured()
     {
         int new_x = rand.nextInt(440);
-        int new_y = rand.nextInt(440);
+        int new_y = rand.nextInt(440) + 50;
         if(x < 500)
         {
             new_x += 500;

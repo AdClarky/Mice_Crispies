@@ -1,8 +1,7 @@
 public class Main {
     public static void main(String[] args) {
-        GameArena arena = new GameArena(1000, 1000);
-        // Rectangle background = new Rectangle(0, 0, 1000, 1000, "WHITE", 1);
-        // arena.addRectangle(background);
+        GameArena arena = new GameArena(1000, 1050);
+       
         Background background = new Background();
         background.addTo(arena);
 
@@ -19,7 +18,7 @@ public class Main {
         Rectangle juiceBar = new Rectangle(900, 0, 100, 20, "RED", 1);
         arena.addRectangle(juiceBar); 
 
-        Text scoreText = new Text("Score: " + cat.getScore(), 22, 0, 22, "BLACK", 1);        
+        Text scoreText = new Text("Score: " + cat.getScore(), 22, 0, 22, "WHITE", 1);        
         arena.addText(scoreText);
 
         while(true)
