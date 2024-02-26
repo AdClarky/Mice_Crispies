@@ -169,7 +169,7 @@ public class Cat {
         {
             y_accel = (-y_accel)/3;
         }
-        if((x+x_accel+80) > 1050 || (x+x_accel) < 0)
+        if((x+x_accel+80) > 1000 || (x+x_accel) < 0)
         {
             x_accel = (-x_accel)/2;
         }
@@ -186,9 +186,7 @@ public class Cat {
         if(y_accel > -0.2 && y > 969)
         {
             y_accel = 0;
-            System.out.println(x_accel);
-            x_accel += -(x_accel/Math.abs(x_accel));
-            System.out.println(x_accel);
+            x_accel /= 1.1;
         }else{
             y_accel += 0.4;
         }
