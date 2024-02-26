@@ -2,7 +2,9 @@ import javax.swing.JFrame;
 
 public class Menu {
     GameArena menu = new GameArena(1000, 1000);
+    int currentLevel = 1;
     Text playText = new Text("PLAY", 50, 5, 700, "WHITE");
+    Text currentLevelText = new Text(": LEVEL " + currentLevel, 50, 140, 700, "WHITE");
     Text levelsText = new Text("LEVELS", 50, 5, 750, "WHITE");
     Text exitText = new Text("EXIT", 50, 5, 800, "WHITE");
     
@@ -11,6 +13,7 @@ public class Menu {
         menu.setBackgroundImage("catTitle.jpeg");
         menu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         menu.addText(playText);
+        menu.addText(currentLevelText);
         menu.addText(levelsText);
         menu.addText(exitText);
     }
@@ -22,7 +25,54 @@ public class Menu {
 
     private void playClicked()
     {
-        Main.level1();
+        switch(currentLevel)
+        {
+            case 1:
+                if(Main.level1())
+                    currentLevel++;
+                    currentLevelText.setText(": LEVEL " + currentLevel);
+                break;
+            case 2:
+                if(Main.level2())
+                    currentLevel++;
+                    currentLevelText.setText(": LEVEL " + currentLevel);
+                break;
+            case 3:
+                if(Main.level3())
+                    currentLevel++;
+                    currentLevelText.setText(": LEVEL " + currentLevel);
+                break;
+            case 4:
+                if(Main.level4())
+                    currentLevel++;
+                    currentLevelText.setText(": LEVEL " + currentLevel);
+                break;
+            case 5:
+                if(Main.level5())
+                    currentLevel++;
+                    currentLevelText.setText(": LEVEL " + currentLevel);
+                break;
+            case 6:
+                if(Main.level6())
+                    currentLevel++;
+                    currentLevelText.setText(": LEVEL " + currentLevel);
+                break;
+            case 7:
+                if(Main.level7())
+                    currentLevel++;
+                    currentLevelText.setText(": LEVEL " + currentLevel);
+                break;
+            case 8:
+                if(Main.level8())
+                    currentLevel++;
+                    currentLevelText.setText(": LEVEL " + currentLevel);
+                break;
+            case 9:
+                if(Main.level9())
+                    currentLevel++;
+                    currentLevelText.setText(": LEVEL " + currentLevel);
+                break;
+        }
     }
 
     private void levelsClicked()

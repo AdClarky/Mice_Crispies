@@ -47,20 +47,28 @@ public class LevelsMenu {
                 Main.level1();
                 break;
             case 2:
+                Main.level2();
                 break;
             case 3:
+                Main.level3();
                 break;
             case 4:
+                Main.level4();
                 break;
             case 5:
+                Main.level5();
                 break;
             case 6:
+                Main.level6();
                 break;
             case 7:
+                Main.level7();
                 break;
             case 8:
+                Main.level8();
                 break;
             case 9:
+                Main.level9();
                 break;
         }
     }
@@ -69,7 +77,6 @@ public class LevelsMenu {
     {
         while(true)
         {
-            System.out.println(levelMenu.getMousePositionX() + ", " + levelMenu.getMousePositionY());
             levelMenu.pause();
             if(levelMenu.getMousePositionX() > 168 && levelMenu.getMousePositionX() < 185 && levelMenu.getMousePositionY() > 67 && levelMenu.getMousePositionY() < 93)
             {
