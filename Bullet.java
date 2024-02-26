@@ -1,31 +1,40 @@
 public class Bullet {
     private double x;
     private double y;
-    private static final int SIZE = 5;
-    private final Rectangle[] rectangles = new Rectangle[4];
+    private int size = 5;
+    private final Rectangle[] rectangles = new Rectangle[3];
     public Rectangle hitbox;
 
-    public Bullet(int starting_x, int starting_y)
+    public Bullet(int starting_x, int starting_y, int size_input)
     {
         x = starting_x;
         y = starting_y;
+        size = size_input;
 
-        rectangles[0] = new Rectangle(x, y, 7*SIZE, 6*SIZE, "BLUE", 0);
-        hitbox = rectangles[0];
-
-        rectangles[1] = new Rectangle(x, y+(2*SIZE), 1*SIZE, 2*SIZE, "BLACK", 9);
-        rectangles[2] = new Rectangle(x+(1*SIZE), y+(1*SIZE), 1*SIZE, 4*SIZE, "BLACK", 9);
-        rectangles[3] = new Rectangle(x+(2*SIZE), y, 6*SIZE, 6*SIZE, "BLACK", 9);
+        rectangles[0] = new Rectangle(x, y+(2*size), 1*size, 2*size, "BLACK", 9);
+        rectangles[1] = new Rectangle(x+(1*size), y+(1*size), 1*size, 4*size, "BLACK", 9);
+        rectangles[2] = new Rectangle(x+(2*size), y, 6*size, 6*size, "BLACK", 9);
     }
 
     public int getSize()
     {
-        return SIZE;
+        return size;
     }
 
     public double getXPosition()
     {
         return x;
+    }
+
+    public boolean checkCollision(Rectangle hitbox)
+    {
+        for (Rectangle rectangle : rectangles) {
+            if(rectangle.collides(hitbox))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     public void addTo(GameArena gameArena)

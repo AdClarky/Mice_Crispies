@@ -12,7 +12,7 @@ public class Level{
     public Level(String levelName, int numBullets, int bulletSize) {
         arena.setName(levelName);
         background.addTo(arena);
-        bullets = new Bullets(arena, numBullets);
+        bullets = new Bullets(arena, numBullets, bulletSize);
         battery.addTo(arena);
         cat.addTo(arena);
         arena.addRectangle(juiceBar);
