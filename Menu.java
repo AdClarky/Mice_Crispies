@@ -1,3 +1,5 @@
+import javax.swing.JFrame;
+
 public class Menu {
     GameArena menu = new GameArena(1000, 1000);
     Cat cat = new Cat(0, 0);
@@ -5,6 +7,7 @@ public class Menu {
     public Menu()
     {
         menu.setBackgroundImage("cat.jpeg");
+        menu.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         cat.addTo(menu);
     }
     

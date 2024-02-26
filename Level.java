@@ -1,3 +1,5 @@
+import javax.swing.JFrame;
+
 public class Level{
     private GameArena arena = new GameArena(1000, 1050);
     private Background background = new Background();
@@ -11,6 +13,7 @@ public class Level{
 
     public Level(String levelName, int numBullets, int bulletSize) {
         arena.setName(levelName);
+        arena.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         background.addTo(arena);
         bullets = new Bullets(arena, numBullets, bulletSize);
         battery.addTo(arena);

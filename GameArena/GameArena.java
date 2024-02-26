@@ -133,6 +133,16 @@ public class GameArena extends JPanel implements Runnable, KeyListener, MouseLis
 			frame.addKeyListener(this);
 	}
 
+	public void setDefaultCloseOperation(int operation)
+	{
+		frame.setDefaultCloseOperation(operation);
+	}
+
+	public int getDefaultCloseOperation()
+	{
+		return frame.getDefaultCloseOperation();
+	}
+
 	public void run() {
 		try {
 			while (!exiting) {
