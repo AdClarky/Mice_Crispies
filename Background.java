@@ -1,29 +1,32 @@
 public class Background {
     private final static int sizeOfRects = 50;
     private Rectangle[] rectangles = new Rectangle[(1000/sizeOfRects)*(1000/sizeOfRects)];
+    private static final String colour1 = "WHITE";
+    private static final String colour2 = "GREY";
+    
 
     public Background()
     {
-        String lastStartignColour = "GREY";
-        String nextColour = "WHITE";
+        String lastStartignColour = colour2;
+        String nextColour = colour1;
         int count = 0;
         for(int i = 0; i < 1000/sizeOfRects; i++)
         {
-            if(lastStartignColour.equals("GREY"))
+            if(lastStartignColour.equals(colour2))
             {
-                lastStartignColour = "WHITE";
-                nextColour = "GREY";
+                lastStartignColour = colour1;
+                nextColour = colour2;
             }else{
-                lastStartignColour = "GREY";
-                nextColour = "WHITE";
+                lastStartignColour = colour2;
+                nextColour = colour1;
             }
             for(int j = 0; j < 1000/sizeOfRects; j++)
             {
-                if(nextColour.equals("WHITE")){
-                    nextColour = "GREY";
+                if(nextColour.equals(colour1)){
+                    nextColour = colour2;
                 }
                 else{
-                    nextColour = "WHITE";
+                    nextColour = colour1;
                 }
 
                 rectangles[count] = new Rectangle(j*sizeOfRects, i*sizeOfRects, sizeOfRects, sizeOfRects, nextColour, 1);

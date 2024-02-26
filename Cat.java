@@ -16,7 +16,7 @@ public class Cat {
         x = starting_x;
         y = starting_y;
 
-        rectangles[0] = new Rectangle(x, y, 80, 80, "WHITE", 0); // hitbox
+        rectangles[0] = new Rectangle(x, y, 80, 80, "BLUE", 0); // hitbox
         hitbox =  rectangles[0];
 
         rectangles[1] = new Rectangle(x+10, y+20, 60, 50, "WHITE", 10);

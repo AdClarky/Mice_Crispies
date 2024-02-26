@@ -10,7 +10,7 @@ public class Bullet {
         x = starting_x;
         y = starting_y;
 
-        rectangles[0] = new Rectangle(x, y, 7*SIZE, 5*SIZE, "BLACK", 0);
+        rectangles[0] = new Rectangle(x, y, 7*SIZE, 6*SIZE, "BLUE", 0);
         hitbox = rectangles[0];
 
         rectangles[1] = new Rectangle(x, y+(2*SIZE), 1*SIZE, 2*SIZE, "BLACK", 9);
