@@ -18,6 +18,16 @@ public class Bullet {
         rectangles[3] = new Rectangle(x+(2*SIZE), y, 6*SIZE, 6*SIZE, "BLACK", 9);
     }
 
+    public int getSize()
+    {
+        return SIZE;
+    }
+
+    public double getXPosition()
+    {
+        return x;
+    }
+
     public void addTo(GameArena gameArena)
     {
         for (Rectangle rectangle : rectangles)
@@ -35,5 +45,15 @@ public class Bullet {
         }
         x += dx;
         y += dy;
+    }
+
+    public void setPos(double new_x, double new_y)
+    {
+        for (Rectangle rectangle : rectangles) {
+            rectangle.setXPosition((rectangle.getXPosition()-x)+new_x);
+            rectangle.setYPosition((rectangle.getYPosition()-y)+new_y);
+        }
+        x = new_x;
+        y = new_y;
     }
 }

@@ -7,12 +7,10 @@ public class Bullets {
     public Bullets(GameArena gameArena, int numBullets)
     {
         bullets = new Bullet[numBullets];
-        Random rand = new Random();
         for(int i = 0; i < numBullets; i++)
         {
-            int y = rand.nextInt(950);
-            int x = rand.nextInt(1000);
-            bullets[i] = new Bullet(x+1000, y);
+            bullets[i] = new Bullet(1000, 1000);
+            resetBullet(bullets[i]);
             bullets[i].addTo(gameArena);
         }
     }
@@ -22,7 +20,19 @@ public class Bullets {
         for (Bullet bullet : bullets)
         {
             bullet.move(bullet_velocity, 0);
+            if(bullet.getXPosition() + (bullet.getSize()*7) < 0)
+            {
+                resetBullet(bullet);
+            }
         }
+    }
+
+    private void resetBullet(Bullet bullet)
+    {
+        Random rand = new Random();
+        int y = rand.nextInt(950);
+        int x = rand.nextInt(1000);
+        bullet.setPos(x+1000, y);
     }
 
     public void increaseBulletSpeed(double dx)
