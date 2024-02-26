@@ -51,11 +51,10 @@ public class Menu {
                 playText.setColour("RED");
                 levelsText.setColour("WHITE");
                 exitText.setColour("WHITE");
-            }else if(menu.getMousePositionX() > 5 && menu.getMousePositionX() < 1957 && menu.getMousePositionY() > 700 && menu.getMousePositionY() < 750)
+            }else if(menu.getMousePositionX() > 5 && menu.getMousePositionX() < 195 && menu.getMousePositionY() > 700 && menu.getMousePositionY() < 750)
             {                
                 if(menu.leftMousePressed())
                 {
-                    System.out.println(1);
                     levelsClicked();
                 }
                 playText.setColour("WHITE");
