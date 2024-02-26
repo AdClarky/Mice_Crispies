@@ -9,10 +9,6 @@ public class Mice {
         int x;
         int y;
         numMice = num_mice;
-        if(numMice > 15)
-        {
-            numMice = 15;
-        }
         mice = new Mouse[numMice];
         Random rand = new Random();
         for(int i = 0; i < numMice; i++)

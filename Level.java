@@ -13,13 +13,13 @@ public class Level{
     private Text levelText;
     private boolean haveWon = false;    
 
-    public Level(String levelName, int numBullets, int bulletSize, double bulletStartingVelocity, int miceCount) {
+    public Level(String levelName, int numBullets, int bulletSize, double bulletSpeed, int miceCount) {
         arena.setName(levelName);
         arena.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         background.addTo(arena);
         mice = new Mice(arena, miceCount);
         bullets = new Bullets(arena, numBullets, bulletSize);
-        bullets.increaseBulletSpeed(bulletStartingVelocity+1);
+        bullets.increaseBulletSpeed(bulletSpeed+1);
         battery.addTo(arena);
         cat.addTo(arena);
         arena.addRectangle(juiceBar);
