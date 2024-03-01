@@ -1,16 +1,15 @@
 import java.util.Random;
 
-public class Battery {
-    private double x;
-    private double y;
+public class Battery extends GameObject {
     private final Random rand = new Random();
-    private final Rectangle[] rectangles = new Rectangle[3];
-    public Rectangle hitbox;
 
     public Battery()
     {
+        super(0, 0);
         x = rand.nextInt(940);
         y = rand.nextInt(940);
+
+        rectangles = new Rectangle[3];
 
         rectangles[0] = new Rectangle(x, y, 20, 50, "WHITE", 0);
         hitbox =  rectangles[0];
@@ -23,6 +22,8 @@ public class Battery {
     {
         int new_x = rand.nextInt(440);
         int new_y = rand.nextInt(440) + 50;
+
+        // ensures it spawns away from where the last one was
         if(x < 500)
         {
             new_x += 500;
@@ -31,19 +32,6 @@ public class Battery {
         {
             new_y += 500;
         }
-
-        for (Rectangle rectangle : rectangles) {
-            rectangle.setXPosition((rectangle.getXPosition()-x) + new_x);
-            rectangle.setYPosition((rectangle.getYPosition()-y) + new_y);
-        }
-        x = new_x;
-        y = new_y;
-    }
-
-    public void addTo(GameArena gameArena)
-    {
-        for (Rectangle rectangle : rectangles) {
-            gameArena.addRectangle(rectangle);
-        }
+        setPosition(new_x, new_y);
     }
 }
