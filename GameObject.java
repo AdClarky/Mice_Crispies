@@ -2,8 +2,6 @@ public class GameObject {
     protected double x;
     protected double y;
 
-    protected double y_accel = 0;
-    protected double x_accel = 0;
     protected Rectangle[] rectangles;
 
     public Rectangle hitbox;
@@ -33,5 +31,16 @@ public class GameObject {
         }
         x += dx;
         y += dy;
+    }
+
+    public void setPosition(double new_x, double new_y)
+    {
+        for(Rectangle rectangle : rectangles)
+        {
+            rectangle.setXPosition((rectangle.getXPosition()-x)+new_x);
+            rectangle.setYPosition((rectangle.getYPosition()-y)+new_y);
+        }
+        x = new_x;
+        y = new_y;
     }
 }
