@@ -1,3 +1,5 @@
 Thumbs.db
 Game.iml
 .idea/*
+.out/*
+out/

@@ -29,7 +29,7 @@ public class Mice {
     {
         for(int i = 0; i < numMice; i++)
         {
-            mice[i].move(positions[i][0], positions[i][1]+50);
+            mice[i].setPosition(positions[i][0], positions[i][1]+50);
         }
     }
 
@@ -38,8 +38,7 @@ public class Mice {
         for (Mouse mouse : mice) {
             if(mouse.hitbox.collides(hitbox))
             {
-                System.out.println("mouse deleted:" + mouse.getXPosition() + "," + mouse.getYPosition());
-                mouse.move(1000, 1000);
+                mouse.setPosition(1000, 1000);
                 return true;
             }
         }
