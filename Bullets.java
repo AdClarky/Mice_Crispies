@@ -30,8 +30,8 @@ public class Bullets {
     private void resetBullet(Bullet bullet)
     {
         Random rand = new Random();
-        int y = rand.nextInt(950-(bullet.getSize()*6));
-        int x = rand.nextInt(2000);
+        double y = rand.nextDouble(950-(bullet.getSize()*6));
+        double x = rand.nextDouble(2000);
         bullet.setPosition(x+1000, y+50);
     }
 

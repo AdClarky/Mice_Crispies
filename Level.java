@@ -5,8 +5,8 @@ public class Level{
     private Background background = new Background();
     private Mice mice;
     private Bullets bullets;
-    private Battery battery = new Battery();
-    private Cat cat = new Cat(0, 950);
+    private Battery battery = new Battery(10);
+    private Cat cat = new Cat(0, 950, 10);
     private Rectangle juiceBar = new Rectangle(750, 0, 250, 25, "RED", 1);
     private Rectangle juiceBarBackground = new Rectangle(750, 0, 250, 25, "WHITE", 0);
     private Text scoreText = new Text("Score: " + cat.getScore(), 44, 0, 44, "WHITE", 1); 

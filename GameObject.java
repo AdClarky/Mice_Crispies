@@ -1,14 +1,13 @@
 public class GameObject {
     protected double x;
     protected double y;
-
     protected Rectangle[] rectangles;
-
+    protected double size;
     public Rectangle hitbox;
-
-    public GameObject(double x, double y){
+    public GameObject(double x, double y, double size){
         this.x = x;
         this.y = y;
+        this.size = size;
     }
 
     public void addTo(GameArena gameArena)
@@ -17,6 +16,10 @@ public class GameObject {
         {
             gameArena.addRectangle(rectangle);
         }
+    }
+    public double getSize()
+    {
+        return size;
     }
 
     /*

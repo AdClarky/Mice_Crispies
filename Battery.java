@@ -3,19 +3,19 @@ import java.util.Random;
 public class Battery extends GameObject {
     private final Random rand = new Random();
 
-    public Battery()
+    public Battery(double size)
     {
-        super(0, 0);
+        super(0, 0, size);
         x = rand.nextInt(940);
         y = rand.nextInt(940);
 
         rectangles = new Rectangle[3];
 
-        rectangles[0] = new Rectangle(x, y, 20, 50, "WHITE", 0);
+        rectangles[0] = new Rectangle(x, y, 2*size, 5*size, "WHITE", 0);
         hitbox =  rectangles[0];
 
-        rectangles[1] = new Rectangle(x, y, 20, 20, "ORANGE", 9);
-        rectangles[2] = new Rectangle(x, y+20, 20, 30, "BLACK", 9);
+        rectangles[1] = new Rectangle(x, y, 2*size, 2*size, "ORANGE", 9);
+        rectangles[2] = new Rectangle(x, y+(2*size), 2*size, 3*size, "BLACK", 9);
     }
 
     public void captured()
