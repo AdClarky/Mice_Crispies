@@ -1,15 +1,20 @@
+import java.time.Duration;
+import java.time.Instant;
+
 public class Cat extends GameObject{
     private double y_accel = 0.2;
     private double x_accel = 0;
     private double juice = 100;
     private int score = 0;
-    private final Flames flames = new Flames(100, 100, 10);
-    private final Tears tears = new Tears(1100, 1100, 10);
+    private final Flames flames;
+    private final Tears tears;
+    private Instant beginTime = Instant.now();
 
     public Cat(int x, int y, double size)
     {
         super(x, y, size);
-
+        flames = new Flames(100, 100, size);
+        tears = new Tears(1100, 1100, size);
         rectangles = new Rectangle[17];
 
         rectangles[0] = new Rectangle(x, y, 8*size, 8*size, "BLUE", 0); // hitbox
@@ -87,41 +92,44 @@ public class Cat extends GameObject{
             flameOff();
             return;
         }
-        y_accel -= 1;
+        y_accel -= 30;
         juice -= 2;
     }
 
     public void horizontalInput(int dir)
     {
-        if((x_accel < 10 && dir == 1) || (x_accel > -10 && dir == -1))
+        if((x_accel < 1000 && dir == 1) || (x_accel > -1000 && dir == -1))
         {
-            x_accel += dir;
+            x_accel += dir*40;
         }
     }
 
     public void update()
     {
+        double delta = (double) Duration.between(beginTime, Instant.now()).getNano() /1000000000;
+        beginTime = Instant.now();
         // if its near enough still (vertically) on the floor
         if(y_accel > -0.2 && y > 969)
         {
+            System.out.println(y_accel);
             y_accel = 0;
             x_accel /= 1.1;
-        }else{ // increases the downwards momentum
-            y_accel += 0.4;
+        }else{// increases the downwards momentum
+            y_accel += 10;
         }
         // increase the juice periodically
         if(juice < 100)
             juice += 0.25;
 
         // bounce mechanic
-        if((y+y_accel+80) > 1050 || (y+y_accel) < 50)
+        if((y+(y_accel*delta)+80) > 1050 || (y+(y_accel*delta)) < 50)
         {
             y_accel = (-y_accel)/3;
         }
-        if((x+x_accel+80) > 1000 || (x+x_accel) < 0)
+        if(((x+(x_accel*delta))+80) > 1000 || (x+(x_accel*delta)) < 0)
         {
             x_accel = (-x_accel)/2;
         }
-        move(x_accel, y_accel);
+        move(x_accel*delta, y_accel*delta);
     }
 }
