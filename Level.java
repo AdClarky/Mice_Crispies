@@ -76,7 +76,6 @@ public class Level{
             }
             if(bullets.checkCollision(cat.hitbox)) // if hit by bullet
             {
-                System.out.println("cat died");
                 cat.died();
                 break;
             }

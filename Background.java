@@ -8,7 +8,7 @@ public class Background {
     public Background()
     {
         String lastStartignColour = colour2;
-        String nextColour = colour1;
+        String nextColour;
         int count = 0;
         for(int i = 0; i < 1000/sizeOfRects; i++)
         {
