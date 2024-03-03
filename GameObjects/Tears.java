@@ -1,12 +1,12 @@
 package GameObjects;
 import GameArena.Rectangle;
 public class Tears extends GameObject{
-    public Tears(double x, double y, double size)
+    public Tears(double x, double y, double scaleMultiplier)
     {
-        super(x, y, size);
+        super(x, y, scaleMultiplier);
         rectangles = new Rectangle[2];
 
-        rectangles[0] = new Rectangle(x+(2*size), y+(5*size), size, 2*size, "BLUE", 10);
-        rectangles[1] = new Rectangle(x+(5*size), y+(5*size), size, 2*size, "BLUE", 10);
+        rectangles[0] = new Rectangle(x+(2*scaleMultiplier), y+(5*scaleMultiplier), scaleMultiplier, 2*scaleMultiplier, "BLUE", 10);
+        rectangles[1] = new Rectangle(x+(5*scaleMultiplier), y+(5*scaleMultiplier), scaleMultiplier, 2*scaleMultiplier, "BLUE", 10);
     }
 }

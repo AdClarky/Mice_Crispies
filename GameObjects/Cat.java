@@ -13,32 +13,32 @@ public class Cat extends GameObject{
     private final Tears tears;
     private Instant beginTime = Instant.now();
 
-    public Cat(int x, int y, double size)
+    public Cat(int x, int y, double scaleMultiplier)
     {
-        super(x, y, size);
-        flames = new Flames(100, 100, size);
-        tears = new Tears(1100, 1100, size);
+        super(x, y, scaleMultiplier);
+        flames = new Flames(100, 100, scaleMultiplier);
+        tears = new Tears(1100, 1100, scaleMultiplier);
         rectangles = new Rectangle[17];
 
-        rectangles[0] = new Rectangle(x, y, 8*size, 8*size, "BLUE", 0); // hitbox
+        rectangles[0] = new Rectangle(x, y, 8*scaleMultiplier, 8*scaleMultiplier, "BLUE", 0); // hitbox
         hitbox =  rectangles[0];
 
-        rectangles[1] = new Rectangle(x+size, y+(2*size), 6*size, 5*size, "WHITE", 10);
-        rectangles[2] = new Rectangle(x, y+size, size, (5*size), "BLACK", 10);
-        rectangles[3] = new Rectangle(x+size, y, size, size, "BLACK", 10);
-        rectangles[4] = new Rectangle(x+size, y+size, size, (2*size), "PINK", 10);
-        rectangles[5] = new Rectangle(x+size, y+(6*size), size, size, "BLACK", 10);
-        rectangles[6] = new Rectangle(x+(2*size), y+size, size, size, "BLACK", 10);
-        rectangles[7] = new Rectangle(x+(2*size), y+(4*size), size, size, "BLACK", 10);
-        rectangles[8] = new Rectangle(x+(2*size), y+(7*size), (4*size), size, "BLACK", 10);
-        rectangles[9] = new Rectangle(x+(3*size), y+(2*size), (2*size), size, "BLACK", 10);
-        rectangles[10] = new Rectangle(x+(3*size), y+(5*size), (2*size), size, "PINK", 10);
-        rectangles[11] = new Rectangle(x+(5*size), y+size, size, size, "BLACK", 10);
-        rectangles[12] = new Rectangle(x+(5*size), y+(4*size), size, size, "BLACK", 10);
-        rectangles[13] = new Rectangle(x+(6*size), y, size, size, "BLACK", 10);
-        rectangles[14] = new Rectangle(x+(6*size), y+(6*size), size, size, "BLACK", 10);
-        rectangles[15] = new Rectangle(x+(6*size), y+size, size, (2*size), "PINK", 10);
-        rectangles[16] = new Rectangle(x+(7*size), y+size, size, (5*size), "BLACK", 10);
+        rectangles[1] = new Rectangle(x+scaleMultiplier, y+(2*scaleMultiplier), 6*scaleMultiplier, 5*scaleMultiplier, "WHITE", 10);
+        rectangles[2] = new Rectangle(x, y+scaleMultiplier, scaleMultiplier, (5*scaleMultiplier), "BLACK", 10);
+        rectangles[3] = new Rectangle(x+scaleMultiplier, y, scaleMultiplier, scaleMultiplier, "BLACK", 10);
+        rectangles[4] = new Rectangle(x+scaleMultiplier, y+scaleMultiplier, scaleMultiplier, (2*scaleMultiplier), "PINK", 10);
+        rectangles[5] = new Rectangle(x+scaleMultiplier, y+(6*scaleMultiplier), scaleMultiplier, scaleMultiplier, "BLACK", 10);
+        rectangles[6] = new Rectangle(x+(2*scaleMultiplier), y+scaleMultiplier, scaleMultiplier, scaleMultiplier, "BLACK", 10);
+        rectangles[7] = new Rectangle(x+(2*scaleMultiplier), y+(4*scaleMultiplier), scaleMultiplier, scaleMultiplier, "BLACK", 10);
+        rectangles[8] = new Rectangle(x+(2*scaleMultiplier), y+(7*scaleMultiplier), (4*scaleMultiplier), scaleMultiplier, "BLACK", 10);
+        rectangles[9] = new Rectangle(x+(3*scaleMultiplier), y+(2*scaleMultiplier), (2*scaleMultiplier), scaleMultiplier, "BLACK", 10);
+        rectangles[10] = new Rectangle(x+(3*scaleMultiplier), y+(5*scaleMultiplier), (2*scaleMultiplier), scaleMultiplier, "PINK", 10);
+        rectangles[11] = new Rectangle(x+(5*scaleMultiplier), y+scaleMultiplier, scaleMultiplier, scaleMultiplier, "BLACK", 10);
+        rectangles[12] = new Rectangle(x+(5*scaleMultiplier), y+(4*scaleMultiplier), scaleMultiplier, scaleMultiplier, "BLACK", 10);
+        rectangles[13] = new Rectangle(x+(6*scaleMultiplier), y, scaleMultiplier, scaleMultiplier, "BLACK", 10);
+        rectangles[14] = new Rectangle(x+(6*scaleMultiplier), y+(6*scaleMultiplier), scaleMultiplier, scaleMultiplier, "BLACK", 10);
+        rectangles[15] = new Rectangle(x+(6*scaleMultiplier), y+scaleMultiplier, scaleMultiplier, (2*scaleMultiplier), "PINK", 10);
+        rectangles[16] = new Rectangle(x+(7*scaleMultiplier), y+scaleMultiplier, scaleMultiplier, (5*scaleMultiplier), "BLACK", 10);
     }
 
     public void addTo(GameArena gameArena)

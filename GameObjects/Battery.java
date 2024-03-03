@@ -1,9 +1,9 @@
 package GameObjects;
 import java.util.Random;
 import GameArena.Rectangle;
+import static GameData.GameSettings.WINDOW_SIZE;
 
 public class Battery extends GameObject {
-    private static final int WINDOW_SIZE = 1000;
     private final Random rand = new Random();
 
     public Battery(double scaleMultiplier)

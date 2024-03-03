@@ -7,12 +7,12 @@ public class Bullets {
     private final Bullet[] bullets;
     private double bullet_velocity = -1;
 
-    public Bullets(GameArena gameArena, int numBullets, int size)
+    public Bullets(GameArena gameArena, int numBullets, int scaleMultiplier)
     {
         bullets = new Bullet[numBullets];
         for(int i = 0; i < numBullets; i++)
         {
-            bullets[i] = new Bullet(1000, 1000, size);
+            bullets[i] = new Bullet(1000, 1000, scaleMultiplier);
             resetBullet(bullets[i]);
             bullets[i].addTo(gameArena);
         }
