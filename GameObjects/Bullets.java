@@ -1,11 +1,14 @@
 package GameObjects;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.Random;
 import GameArena.Rectangle;
 import GameArena.GameArena;
 
 public class Bullets {
     private final Bullet[] bullets;
-    private double bullet_velocity = -2;
+    private double bullet_velocity = -80;
+    private Instant beginTime = Instant.now();
 
     public Bullets(GameArena gameArena, int numBullets, int scaleMultiplier)
     {
@@ -20,9 +23,11 @@ public class Bullets {
 
     public void updateBullets()
     {
+        double delta = (double) Duration.between(beginTime, Instant.now()).getNano() /1000000000;
+        beginTime = Instant.now();
         for (Bullet bullet : bullets)
         {
-            bullet.move(bullet_velocity, 0);
+            bullet.move(bullet_velocity*delta, 0);
             if(bullet.getXPosition() + (bullet.getSize()*7) < 0)
             {
                 resetBullet(bullet);

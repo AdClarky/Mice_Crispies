@@ -35,7 +35,7 @@ public class Level{
         battery.addTo(arena);
         cat.addTo(arena);
         arena.addRectangle(juiceBar);
-        arena.addRectangle(juiceBarBackground); 
+        arena.addRectangle(juiceBarBackground);
         arena.addText(scoreText);
         levelText = new Text(levelName, 44, 400, 44, "WHITE");
         arena.addText(levelText);
@@ -58,7 +58,7 @@ public class Level{
             if(mice.checkCollision(cat.hitbox))
             {
                 cat.scored();
-                bullets.increaseBulletSpeed(0.2);
+                bullets.increaseBulletSpeed(2);
                 scoreText.setText("Score: " + cat.getScore());
                 if(cat.getScore() == mice.getMouseCount())
                 {
