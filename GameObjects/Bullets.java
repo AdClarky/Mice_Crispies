@@ -1,4 +1,7 @@
+package GameObjects;
 import java.util.Random;
+import GameArena.Rectangle;
+import GameArena.GameArena;
 
 public class Bullets {
     private final Bullet[] bullets;
@@ -20,7 +23,7 @@ public class Bullets {
         for (Bullet bullet : bullets)
         {
             bullet.move(bullet_velocity, 0);
-            if(bullet.getXPosition() + (bullet.getSize()*7) < 0)
+            if(bullet.getXPosition() + (bullet.getScaleMultiplier()*7) < 0)
             {
                 resetBullet(bullet);
             }
@@ -30,7 +33,7 @@ public class Bullets {
     private void resetBullet(Bullet bullet)
     {
         Random rand = new Random();
-        double y = rand.nextDouble(950-(bullet.getSize()*6));
+        double y = rand.nextDouble(950-(bullet.getScaleMultiplier()*6));
         double x = rand.nextDouble(2000);
         bullet.setPosition(x+1000, y+50);
     }

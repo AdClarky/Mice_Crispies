@@ -1,3 +1,6 @@
+package GameObjects;
+import GameArena.Rectangle;
+import GameArena.GameArena;
 public class GameObject {
     protected double x;
     protected double y;

@@ -1,3 +1,12 @@
+package GameData;
+import GameObjects.Background;
+import GameObjects.Mice;
+import GameObjects.Bullets;
+import GameObjects.Battery;
+import GameObjects.Cat;
+import GameArena.GameArena;
+import GameArena.Rectangle;
+import GameArena.Text;
 import javax.swing.JFrame;
 
 public class Level{

@@ -1,4 +1,7 @@
 import javax.swing.JFrame;
+import GameArena.GameArena;
+import GameArena.Text;
+import GameData.LevelData;
 
 public class Menu {
     GameArena menu = new GameArena(1000, 1000);

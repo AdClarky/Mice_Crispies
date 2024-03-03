@@ -1,3 +1,5 @@
+package GameObjects;
+import GameArena.Rectangle;
 public class Bullet extends GameObject{
     public Bullet(double x, double y, double size)
     {

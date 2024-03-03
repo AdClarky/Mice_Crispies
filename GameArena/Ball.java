@@ -1,9 +1,10 @@
+package GameArena;
 /**
- * Models a simple solid sphere. 
+ * Models a simple solid sphere.
  * This class represents a Ball object. When combined with the engine.GameArena class,
  * instances of the Ball class can be displayed on the screen.
  */
-public class Ball 
+public class Ball
 {
 	// The following instance variables define the
 	// information needed to represent a Ball

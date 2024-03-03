@@ -1,4 +1,6 @@
+package GameObjects;
 import java.util.Random;
+import GameArena.Rectangle;
 
 public class Battery extends GameObject {
     private static final int WINDOW_SIZE = 1000;

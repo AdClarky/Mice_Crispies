@@ -1,3 +1,4 @@
+package GameArena;
 /**
  * Models a simple line. 
  * This class represents a Line object. When combined with the engine.GameArena class,

@@ -1,3 +1,5 @@
+package GameObjects;
+import GameArena.Rectangle;
 public class Mouse extends GameObject
 {
     public Mouse(double x, double y, double size)

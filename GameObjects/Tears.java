@@ -1,3 +1,5 @@
+package GameObjects;
+import GameArena.Rectangle;
 public class Tears extends GameObject{
     public Tears(double x, double y, double size)
     {

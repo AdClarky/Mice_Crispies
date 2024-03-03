@@ -1,5 +1,8 @@
+package GameObjects;
 import java.time.Duration;
 import java.time.Instant;
+import GameArena.Rectangle;
+import GameArena.GameArena;
 
 public class Cat extends GameObject{
     private double y_accel = 0.2;

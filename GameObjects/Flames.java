@@ -1,3 +1,5 @@
+package GameObjects;
+import GameArena.Rectangle;
 public class Flames extends GameObject{
     public Flames(double x, double y, double size)
     {

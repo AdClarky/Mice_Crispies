@@ -1,3 +1,4 @@
+package GameArena;
 /**
  * Models a simple piece of text. 
  * This class represents a engine.Text object. When combined with the engine.GameArena class,

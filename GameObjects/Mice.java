@@ -1,8 +1,11 @@
+package GameObjects;
 import java.util.Random;
+import GameArena.Rectangle;
+import GameArena.GameArena;
 
 public class Mice {
     private final Mouse[] mice;
-    private int numMice;
+    private final int numMice;
 
     public Mice(GameArena gameArena, int num_mice)
     {
