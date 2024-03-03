@@ -2,12 +2,12 @@ public class GameObject {
     protected double x;
     protected double y;
     protected Rectangle[] rectangles;
-    protected double size;
+    protected double scaleMultiplier;
     public Rectangle hitbox;
-    public GameObject(double x, double y, double size){
+    public GameObject(double x, double y, double scaleMultiplier){
         this.x = x;
         this.y = y;
-        this.size = size;
+        this.scaleMultiplier = scaleMultiplier;
     }
 
     public void addTo(GameArena gameArena)
@@ -17,9 +17,9 @@ public class GameObject {
             gameArena.addRectangle(rectangle);
         }
     }
-    public double getSize()
+    public double getScaleMultiplier()
     {
-        return size;
+        return scaleMultiplier;
     }
 
     /*
