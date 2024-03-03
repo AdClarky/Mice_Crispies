@@ -1,16 +1,15 @@
 package GameObjects;
 import GameArena.Rectangle;
 import GameArena.GameArena;
+import static GameData.GameSettings.OBJ_SIZE;
 public class GameObject {
     protected double x;
     protected double y;
     protected Rectangle[] rectangles;
-    protected double scaleMultiplier;
     public Rectangle hitbox;
-    public GameObject(double x, double y, double scaleMultiplier){
+    public GameObject(double x, double y){
         this.x = x;
         this.y = y;
-        this.scaleMultiplier = scaleMultiplier;
     }
 
     public void addTo(GameArena gameArena)
@@ -20,11 +19,6 @@ public class GameObject {
             gameArena.addRectangle(rectangle);
         }
     }
-    public double getScaleMultiplier()
-    {
-        return scaleMultiplier;
-    }
-
     /*
     increase/decrease the x position by dx,dy
      */

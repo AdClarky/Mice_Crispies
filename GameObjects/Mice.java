@@ -2,6 +2,7 @@ package GameObjects;
 import java.util.Random;
 import GameArena.Rectangle;
 import GameArena.GameArena;
+import static GameData.GameSettings.OBJ_SIZE;
 
 public class Mice {
     private final Mouse[] mice;
@@ -18,7 +19,7 @@ public class Mice {
         {
             x = rand.nextInt(940);
             y = rand.nextInt(940);
-            mice[i] = new Mouse(x, y+50, 10);
+            mice[i] = new Mouse(x, y+50);
             mice[i].addTo(gameArena);
         }
     }
