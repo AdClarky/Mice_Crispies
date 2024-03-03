@@ -8,17 +8,21 @@ import GameArena.GameArena;
 import GameArena.Rectangle;
 import GameArena.Text;
 import javax.swing.JFrame;
+import static GameData.GameSettings.WINDOW_SIZE;
+import static GameData.GameSettings.HEADER_SIZE;
+import static GameData.GameSettings.OBJ_SIZE;
+import static GameData.GameSettings.CAT_SIZE;
 
 public class Level{
-    private GameArena arena = new GameArena(1000, 1050);
+    private final GameArena arena = new GameArena(WINDOW_SIZE, WINDOW_SIZE+HEADER_SIZE);
     private Background background = new Background();
-    private Mice mice;
-    private Bullets bullets;
-    private Battery battery = new Battery(10);
-    private Cat cat = new Cat(0, 950, 10);
-    private Rectangle juiceBar = new Rectangle(750, 0, 250, 25, "RED", 1);
-    private Rectangle juiceBarBackground = new Rectangle(750, 0, 250, 25, "WHITE", 0);
-    private Text scoreText = new Text("Score: " + cat.getScore(), 44, 0, 44, "WHITE", 1); 
+    private final Mice mice;
+    private final Bullets bullets;
+    private final Battery battery = new Battery();
+    private final Cat cat = new Cat(0, WINDOW_SIZE-CAT_SIZE);
+    private final Rectangle juiceBar = new Rectangle(1000 - ((double) WINDOW_SIZE /4), 0, (double) WINDOW_SIZE /4, 25, "RED", 1);
+    private Rectangle juiceBarBackground = new Rectangle(1000 - ((double) WINDOW_SIZE /4), 0, (double) WINDOW_SIZE /4, 25, "WHITE", 0);
+    private final Text scoreText = new Text("Score: " + cat.getScore(), 44, 0, 44, "WHITE", 1);
     private Text levelText;
     private boolean haveWon = false;    
 
@@ -28,7 +32,6 @@ public class Level{
         background.addTo(arena);
         mice = new Mice(arena, miceCount);
         bullets = new Bullets(arena, numBullets, bulletSize);
-        bullets.increaseBulletSpeed(bulletSpeed+1);
         battery.addTo(arena);
         cat.addTo(arena);
         arena.addRectangle(juiceBar);
