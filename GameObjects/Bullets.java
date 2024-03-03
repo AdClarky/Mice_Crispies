@@ -5,7 +5,7 @@ import GameArena.GameArena;
 
 public class Bullets {
     private final Bullet[] bullets;
-    private double bullet_velocity = -1;
+    private double bullet_velocity = -2;
 
     public Bullets(GameArena gameArena, int numBullets, int scaleMultiplier)
     {
