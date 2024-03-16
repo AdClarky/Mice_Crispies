@@ -114,17 +114,19 @@ public class Cat extends GameObject{
         double delta = (double) Duration.between(beginTime, Instant.now()).getNano() /1000000000;
         beginTime = Instant.now();
         // if its near enough still (vertically) on the floor
+        double juiceIncreaseRate = 0.25;
         if(y_accel > -0.2 && y > 969)
         {
-            System.out.println(y_accel);
             y_accel = 0;
             x_accel /= 1.1;
+            juiceIncreaseRate = 0.5;
+
         }else{// increases the downwards momentum
             y_accel += 10;
         }
         // increase the juice periodically
         if(juice < 100)
-            juice += 0.25;
+            juice += juiceIncreaseRate;
 
         // bounce mechanic
         if((y+(y_accel*delta)+8*OBJ_SIZE) > WINDOW_SIZE+HEADER_SIZE || (y+(y_accel*delta)) < HEADER_SIZE)
