@@ -20,12 +20,10 @@ public class Level{
     private final Bullets bullets;
     private final Battery battery = new Battery();
     private final Cat cat = new Cat(0, WINDOW_SIZE-CAT_SIZE);
-    private final Rectangle juiceBar = new Rectangle(1000 - ((double) WINDOW_SIZE /4), 0, (double) WINDOW_SIZE /4, 25, "RED", 1);
-    private Rectangle juiceBarBackground = new Rectangle(1000 - ((double) WINDOW_SIZE /4), 0, (double) WINDOW_SIZE /4, 25, "WHITE", 0);
+    private final Rectangle juiceBar = new Rectangle(WINDOW_SIZE - ((double) WINDOW_SIZE /4), 0, (double) WINDOW_SIZE /4, 25, "RED", 1);
+    private Rectangle juiceBarBackground = new Rectangle(WINDOW_SIZE - ((double) WINDOW_SIZE /4), 0, (double) WINDOW_SIZE /4, 25, "WHITE", 0);
     private final Text scoreText = new Text("Score: " + cat.getScore(), 44, 0, 44, "WHITE", 1);
-    private Text levelText;
-    private boolean haveWon = false;    
-
+    private boolean haveWon = false;
     public Level(String levelName, int numBullets, int bulletSize, double bulletSpeed, int miceCount) {
         arena.setName(levelName);
         arena.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -37,8 +35,6 @@ public class Level{
         arena.addRectangle(juiceBar);
         arena.addRectangle(juiceBarBackground);
         arena.addText(scoreText);
-        levelText = new Text(levelName, 44, 400, 44, "WHITE");
-        arena.addText(levelText);
     }
 
     public void won(){
@@ -54,7 +50,7 @@ public class Level{
             arena.pause();
             cat.update();
             bullets.updateBullets();
-            juiceBar.setXPosition(1000 - cat.getJuice() * 2.5);
+            juiceBar.setXPosition(WINDOW_SIZE - ((cat.getJuice()/100) * WINDOW_SIZE/4));
             if(mice.checkCollision(cat.hitbox))
             {
                 cat.scored();
