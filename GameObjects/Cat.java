@@ -119,7 +119,7 @@ public class Cat extends GameObject{
         {
             y_accel = 0;
             x_accel /= 1.1;
-            juiceIncreaseRate = 0.5;
+            juiceIncreaseRate = 0.75;
 
         }else{// increases the downwards momentum
             y_accel += 10;
