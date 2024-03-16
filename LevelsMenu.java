@@ -14,8 +14,7 @@ public class LevelsMenu {
     {
         levelMenu.setBackgroundImage("cat.jpeg");
         levelMenu.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        levelMenu.addText(leftText);
-        levelMenu.addText(rightText);
+        levelMenu.addText(leftText);        levelMenu.addText(rightText);
         levelMenu.addText(currentLevelText);
     }
     
