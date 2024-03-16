@@ -3,7 +3,8 @@ import java.time.Duration;
 import java.time.Instant;
 import GameArena.Rectangle;
 import GameArena.GameArena;
-import static GameData.GameSettings.OBJ_SIZE;
+
+import static GameData.GameSettings.*;
 
 public class Cat extends GameObject{
     private double y_accel = 0.2;
@@ -126,11 +127,11 @@ public class Cat extends GameObject{
             juice += 0.25;
 
         // bounce mechanic
-        if((y+(y_accel*delta)+80) > 1050 || (y+(y_accel*delta)) < 50)
+        if((y+(y_accel*delta)+8*OBJ_SIZE) > WINDOW_SIZE+HEADER_SIZE || (y+(y_accel*delta)) < HEADER_SIZE)
         {
             y_accel = (-y_accel)/3;
         }
-        if(((x+(x_accel*delta))+80) > 1000 || (x+(x_accel*delta)) < 0)
+        if(((x+(x_accel*delta))+8*OBJ_SIZE) > WINDOW_SIZE || (x+(x_accel*delta)) < 0)
         {
             x_accel = (-x_accel)/2;
         }
