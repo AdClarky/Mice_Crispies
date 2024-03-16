@@ -1,8 +1,8 @@
 package GameObjects;
 import java.util.Random;
 import GameArena.Rectangle;
-import static GameData.GameSettings.WINDOW_SIZE;
-import static GameData.GameSettings.OBJ_SIZE;
+
+import static GameData.GameSettings.*;
 
 public class Battery extends GameObject {
     private final Random rand = new Random();
@@ -25,16 +25,16 @@ public class Battery extends GameObject {
     public void captured()
     {
         double new_x = rand.nextDouble(WINDOW_SIZE - (OBJ_SIZE*6));
-        double new_y = rand.nextDouble(WINDOW_SIZE - (OBJ_SIZE*6)) + 50;
+        double new_y = rand.nextDouble(WINDOW_SIZE - (OBJ_SIZE*6)) + HEADER_SIZE;
 
         // ensures it spawns away from where the last one was
-        if(x < 500)
+        if(x < (double) WINDOW_SIZE /2)
         {
-            new_x += 500;
+            new_x += (double) WINDOW_SIZE /2;
         }
-        if(y < 500)
+        if(y < (double) WINDOW_SIZE /2)
         {
-            new_y += 500;
+            new_y += (double) WINDOW_SIZE / 2;
         }
         setPosition(new_x, new_y);
     }
